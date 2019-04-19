@@ -2,7 +2,8 @@ require_relative("../db/SqlRunner.rb")
 
 class Film
 
-  attr_reader :id, :title, :price
+  attr_accessor :price
+  attr_reader :id, :title
 
 
   def initialize(options)

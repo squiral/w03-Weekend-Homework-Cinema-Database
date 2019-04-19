@@ -16,7 +16,7 @@ Film.delete_all()
 
   film2 = Film.new({
     'title' => 'The Station Agent',
-    'price' => 9
+    'price' => 10
     })
 
     film1.save()
@@ -42,7 +42,7 @@ Film.delete_all()
     customer3.save()
 
   ticket1 = Ticket.new({
-    'film_id' => film1.id,
+    'film_id' => film2.id,
     'customer_id' => customer1.id
     })
 
@@ -56,13 +56,27 @@ Film.delete_all()
     'customer_id' => customer3.id
     })
 
+  ticket4 = Ticket.new({
+    'film_id' => film1.id,
+    'customer_id' => customer1.id
+    })
+
     ticket1.save()
     ticket2.save()
     ticket3.save()
+    ticket4.save()
 
     # p Customer.all()
     # p Film.all()
     # p Ticket.all()
 
-    p customer1.films()
-    p film1.customers()
+    # p customer1.films()
+    # p film1.customers()
+
+    customer1.pay(film2)
+    customer1.update()
+
+    # p customer1.funds
+
+    p customer1.number_of_tickets
+    p customer2.number_of_tickets

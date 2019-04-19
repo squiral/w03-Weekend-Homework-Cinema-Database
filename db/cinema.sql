@@ -14,6 +14,13 @@ CREATE TABLE customers(
   funds INT4
 );
 
+CREATE TABLE screenings(
+  id SERIAL4 PRIMARY KEY,
+  film_id INT4 REFERENCES films(id) ON DELETE CASCADE,
+
+
+);
+
 CREATE TABLE tickets(
   id SERIAL4 PRIMARY KEY,
   film_id INT4 REFERENCES films(id) ON DELETE CASCADE,
