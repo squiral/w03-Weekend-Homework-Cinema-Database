@@ -60,4 +60,6 @@ Film.delete_all()
     ticket2.save()
     ticket3.save()
 
-    p Customer.all()
+    # p Customer.all()
+    p Film.all()
+    p Ticket.all()
