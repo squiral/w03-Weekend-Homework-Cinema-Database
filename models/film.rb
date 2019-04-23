@@ -49,6 +49,20 @@ class Film
     return Customer.map_items(customer_data)
   end
 
+  def number_of_customers()
+    # sql = "SELECT customers.* FROM films
+    # INNER JOIN tickets
+    # ON customers.id = tickets.customer_id
+    # INNER JOIN customers
+    # ON tickets.film_id = films.id
+    # WHERE film_id = $1;"
+    # values = [@id]
+    # customer_data = SqlRunner.run(sql, values)
+    # customer_array = Customer.map_items(customer_data)
+    # return customer_array.count
+    return customers.count
+  end
+
 
 
 
